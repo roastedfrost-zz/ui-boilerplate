@@ -20,6 +20,7 @@ module.exports = {
     plugins,
     output: {
         path: path.resolve(__dirname, 'assets'),
+        publicPath: '/assets/',
         filename: '[name].bundle.js'
     },
     module: {
@@ -37,5 +38,10 @@ module.exports = {
         }]
     },
     devtool: 'eval-source-map',
-    target: 'web'
+    target: 'web',
+    devServer: {
+        contentBase: __dirname,
+        compress: true,
+        port: 8080
+    }
 };
