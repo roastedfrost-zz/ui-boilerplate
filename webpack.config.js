@@ -1,6 +1,7 @@
 // jshint esversion: 6
 
 const webpack = require('webpack');
+const path = require('path');
 const providePlugin = new webpack.ProvidePlugin({
     'React': 'react',
     'ReactDOM': 'react-dom',
@@ -12,12 +13,14 @@ const plugins = [
 ];
 
 module.exports = {
-    context: __dirname,
-    entry: '',
+    context: path.resolve(__dirname, 'src', 'js'),
+    entry: {
+        app: './app.js'
+    },
     plugins,
     output: {
-        path: __dirname,
-        filename: ''
+        path: path.resolve(__dirname, 'assets'),
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [{
@@ -32,5 +35,7 @@ module.exports = {
                 cacheDirectory: true
             }
         }]
-    }
+    },
+    devtool: 'eval-source-map',
+    target: 'web'
 };
