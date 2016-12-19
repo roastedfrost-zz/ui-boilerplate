@@ -33,6 +33,9 @@ module.exports = {
                     [ 'es2015', { 'modules': false } ],
                     'react'
                 ],
+                plugins: [
+                    [ 'transform-object-rest-spread', { useBuiltIns: true } ],
+                ],
                 cacheDirectory: true
             }
         }]
