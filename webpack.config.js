@@ -5,7 +5,8 @@ const path = require('path');
 const providePlugin = new webpack.ProvidePlugin({
     'React': 'react',
     'ReactDOM': 'react-dom',
-    'R': 'ramda'
+    'R': 'ramda',
+    'classNames': 'classnames'
 });
 
 const plugins = [
